@@ -141,7 +141,7 @@ https://habr.com/ru/post/348324/
 >
 >$ ./xbps-src -j12 -N pkg base-minimal grub linux-firmware-intel linux-firmware-network dracut linux5.17 linux5.17-headers xbps dosfstools e2fsprogs btrfs-progs ncurses dhcpcd dbus elogind polkit rtkit pipewire alsa-pipewire opendoas
 >
->$ xbps-install -R $BINPKGS -r /mnt/void base-minimal grub linux-firmware-intel linux-firmware-network dracut linux5.17 linux5.17-headers xbps dosfstools e2fsprogs btrfs-progs ncurses dhcpcd dbus elogind polkit rtkit pipewire alsa-pipewire opendoas git
+>$ xbps-install -R $BINPKGS -r /mnt/void base-minimal grub linux-firmware-intel linux-firmware-network dracut linux5.17 linux5.17-headers xbps dosfstools e2fsprogs btrfs-progs ncurses dhcpcd dbus elogind polkit rtkit pipewire alsa-pipewire opendoas
 
 
 #### 5. Chroot в новую систему.  Настройка конфигов.
@@ -172,6 +172,9 @@ https://habr.com/ru/post/348324/
 >$ echo "permit keepenv persist nolog :wheel" >> /etc/doas.conf
 >
 >$ doas -C /etc/doas.conf
+
+
+>// локали
 >
 >$ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 >
