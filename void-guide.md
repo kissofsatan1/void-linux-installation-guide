@@ -65,15 +65,15 @@ https://m.habr.com/ru/post/348324/
 
 
 #### 3. Теперь все монтируем.
->// корень
+># корень
 >$ mkdir -p /mnt/void
 >$ mount /dev/sdb3 /mnt/void
 
->// boot раздел(DOS)
+># boot раздел(DOS)
 >$ mkdir -p /mnt/void/boot/
 >$ mount /dev/sdb1 /mnt/void/boot
 >
->// boot раздел(GPT)
+># boot раздел(GPT)
 >$ mkdir -p /mnt/void/boot/efi
 >$ mount /dev/sdb1 /mnt/void/boot/efi
 
