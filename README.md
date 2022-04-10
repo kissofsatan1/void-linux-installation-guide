@@ -63,7 +63,7 @@ https://habr.com/ru/post/348324/
 >$ mkfs.btrfs /dev/sdb3
 
 **Создание файловой системы(GPT):**
->$ mkfs.fat -F32 /dev/sdb1
+>$ mkfs.vfat /dev/sdb1
 >
 >$ mkswap /dev/sdb2 -L "swap"
 >
