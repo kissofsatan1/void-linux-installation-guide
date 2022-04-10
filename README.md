@@ -81,12 +81,14 @@ https://habr.com/ru/post/348324/
 >
 >$ mount /dev/sdb3 /mnt/void
 
+
 >// boot раздел(DOS)
 >
 >$ mkdir -p /mnt/void/boot/
 >
 >$ mount /dev/sdb1 /mnt/void/boot
->
+
+
 >// boot раздел(GPT)
 >
 >$ mkdir -p /mnt/void/boot/efi
@@ -133,7 +135,8 @@ https://habr.com/ru/post/348324/
 >$ cd void-packages
 >
 >$ ./xbps-src -j12 bootstrap // -j число используемых потоков
->
+
+
 >// установка базовых пакетов
 >
 >$ ./xbps-src -j12 -N pkg base-minimal grub linux-firmware-intel linux-firmware-network dracut linux5.17 linux5.17-headers xbps dosfstools e2fsprogs btrfs-progs ncurses dhcpcd dbus elogind polkit rtkit pipewire alsa-pipewire opendoas
@@ -153,7 +156,8 @@ https://habr.com/ru/post/348324/
 >$ chmod 755 /
 >
 >$ passwd root
->
+
+
 >// Создаем юзера, задаем ему пароль, меняем хостнейм
 >
 >$ useradd -m -G users, wheel -s /bin/bash kiss-void
@@ -161,7 +165,8 @@ https://habr.com/ru/post/348324/
 >$ passwd kiss-void
 >
 >$ echo kissofsatan > /etc/hostname
->
+
+
 >// создаем и подключаем конфиг doas
 >
 >$ echo "permit keepenv persist nolog :wheel" >> /etc/doas.conf
@@ -171,11 +176,13 @@ https://habr.com/ru/post/348324/
 >$ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 >
 >$ echo "en_US.UTF-8 UTF-8" >> /etc/default/libc-locales
->
+
+
 >// часовой пояс
 >
 >$ ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
->
+
+
 >// fstab (DOS)
 >
 >$ cat >> /etc/fstab << EOF
@@ -187,7 +194,8 @@ https://habr.com/ru/post/348324/
 >=> /dev/sdb3 / btrfs noatime 0 1
 >
 >=>EOF
->
+
+
 >// fstab (GPT)
 >
 >$ cat >> /etc/fstab << EOF
@@ -199,7 +207,8 @@ https://habr.com/ru/post/348324/
 >=> /dev/sdb3 / btrfs noatime 0 1
 >
 >=> EOF
->
+
+
 >// добавляем необходимые сервисы в автозапуск 
 >
 >$ ln -s /etc/sv/{dhcpcd,dbus,polkit} /var/service/
