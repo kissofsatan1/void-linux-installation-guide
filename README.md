@@ -227,7 +227,7 @@ https://habr.com/ru/post/348324/
 >$ grub-mkconfig -o /boot/grub/grub.cfg
 
 **GPT:**
->$ grub-install --efi-directory=/boot/efi
+>$ grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --removable
 >
 >$ grub-mkconfig -o /boot/grub/grub.cfg
 
